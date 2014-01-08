@@ -8,6 +8,16 @@ body {
   padding-top:40px;
 }
 
+a {
+  border-bottom:1px dotted;
+}
+a:hover {
+  text-decoration:none;
+}
+
+ul {
+  margin-left:-10px;
+}
 
 /* Wrapper for page content to push down footer */
 #wrap {

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+<<<<<<< HEAD
+<title>About Geo</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+=======
+  <title>About Geo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="custom.css">
+>>>>>>> f523c0aee6ea4dc1efa50b34d81d9c9a095b84d9
+</head>
+<body>
+
+<div id="wrap">
+<div class="container">
+
+<div class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+  <div class="navbar-collapse collape">
+    <div class="btn-toolbar pull-right"><div class="btn-group">
+      <button type="button" class="btn btn-default scroll" data-href="#me"><span class="glyphicon glyphicon-user"></span></button>
+      <button type="button" class="btn btn-default scroll" data-href="#projects"><span class="glyphicon glyphicon-cog"></span></button>
+      <button type="button" class="btn btn-default scroll" data-href="#work"><span class="glyphicon glyphicon-briefcase"></span></button>
+      <button type="button" class="btn btn-default scroll" data-href="#academics"><span class="glyphicon glyphicon-book"></span></button>
+      <button type="button" class="btn btn-default scroll" data-href="#fun"><span class="glyphicon glyphicon-heart"></span></button>
+
+    </div></div>
+  </div>
+</div>
+</div>
+
+<div id="me" class="page-header">
+  <h1><span class="glyphicon glyphicon-user"></span> Geoffery L. Miller (Geo)</h1>
+  <div class="jumbotron">
+    <p>Hey, I'm Geo.  You can find me on <a href="https://github.com/georules">github</a>, <a href="https://www.facebook.com/geo.miller">facebook</a>, <a href="https://twitter.com/georules">twitter</a>, <a href="http://www.linkedin.com/pub/geoffery-miller/14/b61/860">linkedin</a>, or just <a href="mailto:geoffery.miller@gmail.com">email me</a>.</p>
+  </div>
+</div>
+
+<div id="projects" class="container row">
+  <h2><span class="glyphicon glyphicon-cog"></span> Projects</h2>
+<div class="row">
+  <div class="col-md-4">
+    <h3>The Code Lab</h3>
+    <p>The Code Lab is exploring web front-end programming interfaces.  It aims to close the distance between writing code, trying it, seeing results, and also finding code examples that solve small problems.  It currently has two live demos:</p>
+<ul><li><a href="http://ec2-54-211-57-158.compute-1.amazonaws.com/">Code Lab 0.1</a>  A simple 3 text box python editor and executor.  This version implements both the front end sending input and code to recieve output and/or errors, and a prototypal code execution api service.</li>
+<li><a href="http://ec2-54-211-57-158.compute-1.amazonaws.com:9090/">Code Lab Web 0.1</a>  A collaborative live HTML/CSS editor.  This has explored the use of <a href="https://www.firebase.com/">Firebase</a> and <a href="http://sharejs.org/">ShareJS</a> for OT data synchronization.</li>
+</ul>
+  </div>
+
+  <div class="col-md-4">
+  <h3>Tributary</h3>
+  <p><a href="https://github.com/enjalot">enjalot</a>'s <a href="http://tributary.io/">Tributary</a> is a live javascript, coffeescript, and processing.js editor aimed at primarily utilizing <a href="http://d3js.org/">d3.js</a> to create data visualizations, geometrical drawings, and animations.  It uses <a href="https://gist.github.com/">github gists</a> to save and fork code from its users.</p>
+<ul><li>I have contributed to this project by adding in an in-browser screenshot capability, to add life to <a href="http://tributary.io/s/6094415?user=enjalot">user</a> <a href="http://tributary.io/inlet/6616371">pages</a> and the <a href="http://tributary.io/s/6722486">recent inlets page</a>.</li>
+<li>I have also contributed to <a href="http://enjalot.github.io/Inlet/">Inlet</a>, tributary's <a href="http://codemirror.net/">codemirror</a> plugin to utilize the <a href="https://github.com/nornagon/thistle/">thistle</a> color picker.</li> 
+<li>I am currently working on implementing a loop depth counter to prevent infinite loops from crashing the application from being automatically evaluated.</li>
+</ul>
+  </div>
+
+  <div class="col-md-4">
+  <h3>yaplib</h3>
+  <p><a href="https://github.com/ttricarico/yaplib">yet another php library</a> is a simple set of tools to quickly mock up a restful api or power the backend of a web application.  Started by <a href="https://github.com/ttricarico">ttricarico</a>, yaplib started from the <a href="https://github.com/jmathai/epiphany">epiphany php framework</a> with the goal of further simplifying the interface and adding more common tools for web development.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+  <h3>QuickClock Advanced Overclock</h3>
+  <p><a href="https://play.google.com/store/apps/details?id=com.jpapps.quickclockadvanced&hl=en">QCA</a> by <a href="https://play.google.com/store/apps/developer?id=JPApps&hl=en">JPApps</a> is an overclocking utility, and battery optimizer. QCA automatically determines the ideal scaling voltages and overclocked speeds for your device's processor as well as the maximum speed and implements safegaurds to reduce the possibility for any kind of damage.</p><p>QCA targeted android devices in the Droid 1 through X generations.  It has not been updated to support any current dual-core or newer devices.</p><p>I created the framework for the user interface and stress tester.  Paul Anderson integrated the overclocking module and designed the artwork.</p>
+  </div>
+
+  <div class="col-md-4">
+  <h3>...</h3>
+  <p>and a number of other discarded things <a href="wastebasketPA.gif">which were, perhaps, before their time</a>.</p>
+  </div>
+
+  <div class="col-md-4">
+  <h3>Languages</h3>
+  <p>I currently find myself primarily coding in javascript (node.js, d3.js, jquery), java, python, and php.</p>
+  <p>... but I'm always interested in learning something new.</p>
+  </div>
+
+</div>
+
+</div>
+
+<hr/>
+
+<div id="work" class="container row">
+  <h2><span class="glyphicon glyphicon-briefcase"></span> Work</h2>
+  <div class="col-md-4"><div class="well"><h3>Assistant in Arts &amp; Sciences</h3><h4>Teaching Faculty</h4>
+    <ul>
+    <li>Problem Solving with Object Oriented Programming</li>
+    <li>Interdisciplinary Web Development</li>
+    </ul>
+  </div></div>
+  <div class="col-md-4"><div class="well"><h3>Assistant Director</h3>
+    <p class="text-center"><a href="http://pic.fsu.edu/"><img src="pic.png" class="img-rounded"/></a> <a href="http://www.fsu.edu"><img src="fsu.jpg" width="100"class="img-rounded"></a></p>
+    <p><a href="http://pic.fsu.edu/">Program in Interdisciplinary Computing (PIC)</a>,</p>
+    <p><a href="http://www.fsu.edu/">Florida State University (FSU)</a></p>
+  </div></div>
+  <div class="col-md-4"><div class="well"><h3>DIGITECH Co-Creator</h3>
+    <p class="text-center"><a href="http://digitech.fsu.edu/"><img class=" img-rounded"src="digitech.png"/></a></p>
+    <p><a href="http://digitech.fsu.edu">DIGITECH</a>: a showcase of student innovation with technology.</p>
+    <p>Executive Committee, Lead Judge, Web Engineer</p>
+  </div></div>
+</div>
+
+<hr/>
+
+<div id="academics" class="container row">
+  <h2><span class="glyphicon glyphicon-book"></span> Academics</h2>
+  <h3>Publications</h3>
+  <h4>FSU College of Medicine, <a href="http://med.fsu.edu/index.cfm?page=biomedicalSciences.cappendijkLab">Cappendijk Lab</a></h4>
+  <ul>
+<li>Cappendijk SLT, <em>Miller GL</em>, Yount PL, van Engelen RA, <a href="http://www.ncbi.nlm.nih.gov/pubmed/23208000">Automatic data analysis of real-time song and locomotor activity in zebra finches.</a> Int J Bioinformatics Res &amp; Applications, 9.1 (2013): 91-108</li>
+  <li>Cappendijk SLT, Pirvan DF, <em>Miller GL</em>, Rodriguez MI, Chalise P, Halquist MS, James JR, <a href="http://www.ncbi.nlm.nih.gov/pubmed/20471408">In vivo nicotine exposure in the zebra finch; a promising innovative animal model to use in neurodegenerative disorders related research.</a> Pharmacol Biochem Behav. 96(2):152-9, 2010</li>
+  </ul>
+  <h3>Coursework</h3>
+  <div class="col-md-6">
+  <h4>M.Sc. Scientific Computing, Florida State University, May 2011</h4>
+  <p>Thesis: Assessment of Parametric Uncertainty using Markov Chain Monte Carlo Methods for Surface Complexation Models in Groundwater Reactive Transport Modeling.  <a href="http://adsabs.harvard.edu/abs/2010AGUFM.H42D..03M">Presented, AGU 2010.</a> <a href="http://people.sc.fsu.edu/~mye/ORAU.php">Defense Accepted, 2011.</a></p> 
+  <p>High Performance Computing, Data Visualization, Model Validation and Verification, Numerical Modeling</p> 
+  </div>
+  <div class="col-md-6">
+  <h4>B.Sc. Computer Science, Florida State University, April 2008</h4>
+  <p>Programming Languages, Data Structures, Algorithms, Discrete Mathematics</p>
+  </div>
+</div>
+
+<hr/>
+
+<div id="fun" class="container row">
+  <h2><span class="glyphicon glyphicon-heart"></span> Fun</h2>
+  <p>Maybe I shouldn't have put this at the end of my page...  I also enjoy <a href="http://www.nfbl.org/">homebrewing beer</a> and working on, ocassionally driving, my <a href="http://carphotos.cardomain.com/ride_images/1/1915/1061/4785530002_large.jpg">1978 MG Midget</a>.</p>
+</div>
+
+</div>
+</div>
+
+<div id="footer">
+<div class="container">
+<p class="pull-left text-muted credit">Geo does stuff</p>
+<img src="image.jpg" class="img-circle pull-right">
+</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="custom.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44943218-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

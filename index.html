@@ -37,9 +37,11 @@
 <div class="row">
   <div class="col-md-6">
     <h3>The Code Lab</h3>
-    <p>The Code Lab is exploring web front-end programming interfaces.  It aims to close the distance between writing code, trying it, seeing results, and also finding code examples that solve small problems.  It currently has two live demos:</p>
-<ul><li><a href="http://ec2-54-211-57-158.compute-1.amazonaws.com/">Code Lab 0.1</a>  A simple 3 text box python editor and executor.  This version implements both the front end sending input and code to recieve output and/or errors, and a prototypal code execution api service.</li>
-<li><a href="http://ec2-54-211-57-158.compute-1.amazonaws.com:9090/">Code Lab Web 0.1</a>  A collaborative live HTML/CSS editor.  This has explored the use of <a href="https://www.firebase.com/">Firebase</a> and <a href="http://sharejs.org/">ShareJS</a> for OT data synchronization.</li>
+    <p>The Code Lab is exploring web front-end programming interfaces.  It aims to close the distance between writing code, trying it, seeing results, and also finding code examples that solve small problems.  It currently has threee demos:</p>
+<ul>
+  <li><a href="http://ec2-54-211-57-158.compute-1.amazonaws.com:9090/">Code Lab Web 0.1</a>  A collaborative live HTML/CSS editor.  This has explored the use of <a href="https://www.firebase.com/">Firebase</a> and <a href="http://sharejs.org/">ShareJS</a> for OT data synchronization.</li>
+  <li><a href="http://codebootcamp.me">Code BootCamp</a>  An experiment in creating an online textbook/tutorial along with an interactive code editor (JavaScript).  The code editor will report errors, block malicious code, and timeout infinite loops.</li>
+  <li><a href="http://ec2-54-211-57-158.compute-1.amazonaws.com:1337/">Code Lab 0.1</a>  The first experiment for the code lab, this is a simple 3 text box python editor and executor.  This version implements both the front end sending input and code to recieve output and/or errors, and a prototypal code execution api service. (The code execution service crashes a good bit, so this might not be working currently.)</li>
 </ul>
   </div>
 
@@ -47,9 +49,12 @@
   <h3>Tributary</h3>
   <p><a href="https://github.com/enjalot">enjalot</a>'s <a href="http://tributary.io/">Tributary</a> is a live javascript, coffeescript, and processing.js editor aimed at primarily utilizing <a href="http://d3js.org/">d3.js</a> to create data visualizations, geometrical drawings, and animations.  It uses <a href="https://gist.github.com/">github gists</a> to save and fork code from its users.</p>
 <ul><li>I have contributed to this project by adding in an in-browser screenshot capability, to add life to <a href="http://tributary.io/s/6094415?user=enjalot">user</a> <a href="http://tributary.io/inlet/6616371">pages</a> and the <a href="http://tributary.io/s/6722486">recent inlets page</a>.</li>
+<li>I accelerated page load times by minifying some resources in the project build and caching data using MongoDB that is stored in github.</li>
 <li>I have also contributed to <a href="http://enjalot.github.io/Inlet/">Inlet</a>, tributary's <a href="http://codemirror.net/">codemirror</a> plugin to utilize the <a href="https://github.com/nornagon/thistle/">thistle</a> color picker.</li> 
 <li>I am currently working on implementing a loop depth counter to prevent infinite loops from crashing the application from being automatically evaluated.</li>
 </ul>
+
+
   </div>
 
 </div>

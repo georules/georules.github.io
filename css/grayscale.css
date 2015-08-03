@@ -4,6 +4,16 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+svg{
+  position:absolute;
+  top:0px;
+  left: 0px;
+  z-index: 0;
+}
+.intro-body{
+  z-index: 100;
+}
+
  @font-face {
       font-family: "Colaborate-Thin";
       src: url("../fonts/Colaborate/ColabThi.otf");
@@ -13,6 +23,8 @@
   font-family: "Colaborate-Thin","Helvetica Neue", Helvetica, sans-serif;
   text-transform: lowercase;
 }
+
+
 
 body {
     width: 100%;

@@ -88,7 +88,7 @@ var svg = d3.select(".intro").append("svg")
     .attr("width", window.innerWidth)
     .attr("height", window.innerHeight);
 
-    var size = 3000;
+    var size = window.innerWidth/2;
 
     var x = d3.scale.ordinal()
         .domain(d3.superformulaTypes)
@@ -101,7 +101,7 @@ var svg = d3.select(".intro").append("svg")
 
     var path = svg.append("path")
         .attr("class", "big")
-        .attr("transform", "translate("+window.innerWidth/2+","+window.innerHeight/2+")")
+        .attr("transform", "translate("+window.innerWidth/2+","+window.innerHeight/4+")")
         .attr("d", big)
         .attr("stroke",'#000')
         .attr("fill","transparent")

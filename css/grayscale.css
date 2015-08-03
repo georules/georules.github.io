@@ -152,7 +152,8 @@ a:focus {
 .intro {
     display: table;
     width: 100%;
-    height: inherit;
+    height: auto;
+    min-height:100%;
     padding: 100px 0;
     text-align: center;
     color: #fff;

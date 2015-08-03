@@ -25,10 +25,8 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-
-
-
     <section class="intro">
+      <svg class="intro-svg"></svg>
         <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -84,7 +82,7 @@
 //mod from http://bl.ocks.org/mbostock/3081153 and http://bl.ocks.org/mbostock/1020902
 //http://bl.ocks.org/mbostock/1021103
 
-var svg = d3.select(".intro").append("svg")
+var svg = d3.select(".intro-svg")
     .attr("width", window.innerWidth)
     .attr("height", window.innerHeight);
 
@@ -101,7 +99,7 @@ var svg = d3.select(".intro").append("svg")
 
     var path = svg.append("path")
         .attr("class", "big")
-        .attr("transform", "translate("+window.innerWidth/2+","+window.innerHeight/4+")")
+        .attr("transform", "translate("+window.innerWidth/2+","+window.innerHeight/5+")")
         .attr("d", big)
         .attr("stroke",'#000')
         .attr("fill","transparent")
@@ -118,7 +116,7 @@ var svg = d3.select(".intro").append("svg")
     loop()
 
     window.onresize = function() {
-      path.attr("transform", "translate("+window.innerWidth/2+","+window.innerHeight/2+")")
+      path.attr("transform", "translate("+window.innerWidth/2+","+window.innerHeight/5+")")
     }
 
 </script>

@@ -4,12 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-svg{
-  position:absolute;
-  top:0px;
-  left: 0px;
-  z-index: 0;
-}
+ svg{
+   position:absolute;
+   
+ }
 .intro-body{
   z-index: 100;
 }
@@ -176,6 +174,10 @@ a:focus {
     background-size: cover;
     -o-background-size: cover;
     overflow-y: auto;
+}
+
+.intro-body{
+  margin-top: 100px;
 }
 
 .intro .intro-body {

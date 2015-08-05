@@ -145,7 +145,7 @@ var svg = d3.select(".intro-svg")
 
     var path = svg.append("path")
         .attr("class", "big")
-        .attr("transform", "translate("+window.innerWidth/2+","+size/3+")")
+        .attr("transform", "translate("+window.innerWidth/2+","+size/4+")")
         .attr("d", big)
         .attr("stroke",'#aaa')
         .attr("fill","transparent")
@@ -175,7 +175,7 @@ var svg = d3.select(".intro-svg")
     loop()
     
         window.onresize = function() {
-      path.attr("transform", "translate("+window.innerWidth/2+","+size/3+")")
+      path.attr("transform", "translate("+window.innerWidth/2+","+size/4+")")
     }
         
         

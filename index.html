@@ -13,6 +13,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/grayscale.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,6 +36,13 @@
                     <div class="col-md-12">
                         <h1 class="brand-heading">codeslam</h1>
                         <p class="intro-text">interactive code experiences</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="controls">
+                            
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -65,22 +75,56 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
-
+   
     <script src="js/d3.min.js"></script>
-    <script src="js/d3.superformula.min.js"></script>
+    <script src="js/superformula.js"></script>
+    <script src="js/dat.gui.js"></script>
 <script>
 
 //mod from http://bl.ocks.org/mbostock/3081153 and http://bl.ocks.org/mbostock/1020902
 //http://bl.ocks.org/mbostock/1021103
+//
+
+    parameters = ['m','n1','n2','n3','a','b']
+    var shape = function(s) {
+        
+        parameters.forEach(function(p){
+            this["_"+p] = 10.0
+        })
+    }
+    parameters.forEach(function(p) {
+        Object.defineProperty(shape.prototype,p, {
+            get:function(){
+                prop = this["_"+p]
+                return typeof(prop) != 'undefined' ? prop : 10.0
+            },
+            set:function(x){this["_"+p] = x}
+        })
+        
+    })
+   
+
+    window.onload = function() {
+        var s = new shape()
+        var gui = new dat.GUI({autoPlace:false, width:"100%"})
+        dat.GUI.toggleHide();
+        document.getElementById('controls').appendChild(gui.domElement)
+        parameters.forEach(function(p) {
+            var controller = gui.add(s,p).min(-10).max(100).step(0.001)
+            
+            controller.onChange(function(v) {
+                d = d3.superformulaTypes[ii]
+                n = d3.superformula().size(size*50).segments(360).type(d)
+                d = n.param(p,v)
+                d3.select(".big").transition().duration(0).attr("d", d)
+            })
+        })
+        
+       $('.close-button').hide()
+       
+
 
 var svg = d3.select(".intro-svg")
     .attr("width", window.innerWidth)
@@ -97,7 +141,7 @@ var svg = d3.select(".intro-svg")
     var big = d3.superformula()
         .type("circle")
         .size(size * 50)
-        .segments(512);
+        .segments(360);
 
     var path = svg.append("path")
         .attr("class", "big")
@@ -108,18 +152,47 @@ var svg = d3.select(".intro-svg")
         .attr("stroke-width","5px")
 
     var ii = d3.superformulaTypes.indexOf("circle")+1;
+    window.loopit=true
     function loop() {
-      d = d3.superformulaTypes[ii]
-      d3.select(".big").transition().duration(1000).attr("d", big.type(d))
-      .delay(500)
-      .each("end", loop);
-      ii = (ii+1 == d3.superformulaTypes.length) ? 0 : ii+1;
+        if(window.loopit) {
+          d = d3.superformulaTypes[ii]
+          n = d3.superformula().size(size*50).segments(360).type(d)
+      
+          parameters.forEach(function(p) {
+              data = d3.superformulaObjects[d]
+              s[p] = data[p]
+          })
+          
+          gui.__controllers.forEach(function(g){
+              g.updateDisplay()
+          })
+         
+          d3.select(".big").transition().duration(1000).attr("d",n)
+            .each("end", loop);
+            ii = (ii+1 == d3.superformulaTypes.length) ? 0 : ii+1;
+        }
     }
     loop()
-
-    window.onresize = function() {
+    
+        window.onresize = function() {
       path.attr("transform", "translate("+window.innerWidth/2+","+size/3+")")
     }
+        
+        
+        $("svg").click(function() {
+            //if(window.loopit) {
+            //    window.loopit=false
+           // }
+           // else{
+                window.loopit=true;
+                loop()
+           // }
+        })
+}
+
+
+    
+    
 
 </script>
 

@@ -27,9 +27,9 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
+<svg class="intro-svg"></svg>
     <section class="intro">
-      <svg class="intro-svg"></svg>
+      
         <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -178,7 +178,19 @@ var svg = d3.select(".intro-svg")
       path.attr("transform", "translate("+window.innerWidth/2+","+size/4+")")
     }
         
-        
+        $("#controls").hide()
+        hide=true
+        $(".intro-text").click(function() {
+            if(hide) {
+                $("#controls").fadeIn()
+                hide=false
+            }
+            else{
+                $("#controls").fadeOut()
+                hide=true
+            } 
+           
+        })
         $("svg").click(function() {
             //if(window.loopit) {
             //    window.loopit=false

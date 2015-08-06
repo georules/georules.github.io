@@ -46,7 +46,8 @@ body {
     height: 100%;
     font-family: "Colaborate-Thin","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
-  background-color: #74c9e8;
+  background-color: #00BFFF;
+  background: radial-gradient(ellipse at top left, rgba(100,155,200,1) 0%,rgba(160,197,216,1) 100%);
 }
 
 html {

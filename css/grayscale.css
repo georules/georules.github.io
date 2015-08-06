@@ -47,7 +47,8 @@ body {
     font-family: "Colaborate-Thin","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
   background-color: #00BFFF;
-  background: radial-gradient(ellipse at top left, rgba(100,155,200,1) 0%,rgba(160,197,216,1) 100%);
+  background: linear-gradient(135deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), linear-gradient(to right, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
+  /*background: radial-gradient(ellipse at top left, rgba(100,155,200,1) 0%,rgba(160,197,216,1) 100%);*/
 }
 
 html {
@@ -185,7 +186,7 @@ a:focus {
     padding:  0;
     text-align: center;
     color: #fff;
-    
+
 }
 
 

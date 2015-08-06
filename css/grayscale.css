@@ -4,10 +4,20 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
- svg{
-   position:absolute;
-   
+ .small {
+   fill: steelblue;
  }
+
+
+
+ .small:hover {
+   stroke: steelblue;
+   fill: lightsteelblue;
+ }
+
+ /*svg{
+   position:absolute;
+ }*/
 .intro-body{
   z-index: 100;
 }
@@ -29,7 +39,7 @@ body {
     height: 100%;
     font-family: "Colaborate-Thin","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
-    background-color: #000;
+  background-color: #74c9e8;
 }
 
 html {
@@ -164,11 +174,11 @@ a:focus {
     width: 100%;
     height: auto;
     min-height:600px;
-    padding: 100px 0;
+    padding:  0;
     text-align: center;
     color: #fff;
     /*background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;*/
-    background-color: #74c9e8;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -176,12 +186,10 @@ a:focus {
     overflow-y: auto;
 }
 
-.intro-body{
-  margin-top: 100px;
-}
+
 
 .intro .intro-body {
-    display: table-cell;
+    /*display: table-cell;*/
     vertical-align: middle;
 }
 

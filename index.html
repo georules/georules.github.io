@@ -29,7 +29,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <svg class="intro-svg"></svg>
     <section class="intro">
-      
+
         <div class="intro-body">
             <div class="container">
                 <div class="row">
@@ -41,9 +41,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div id="controls">
-                            
-                        </div>    
+
+                        </div>
                     </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <svg class="small"></svg>
+                  </div>
                 </div>
             </div>
         </div>
@@ -77,7 +82,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
-   
+
     <script src="js/d3.min.js"></script>
     <script src="js/superformula.js"></script>
     <script src="js/dat.gui.js"></script>
@@ -89,7 +94,7 @@
 
     parameters = ['m','n1','n2','n3','a','b']
     var shape = function(s) {
-        
+
         parameters.forEach(function(p){
             this["_"+p] = 10.0
         })
@@ -102,9 +107,9 @@
             },
             set:function(x){this["_"+p] = x}
         })
-        
+
     })
-   
+
 
     window.onload = function() {
         var s = new shape()
@@ -113,7 +118,7 @@
         document.getElementById('controls').appendChild(gui.domElement)
         parameters.forEach(function(p) {
             var controller = gui.add(s,p).min(-10).max(100).step(0.001)
-            
+
             controller.onChange(function(v) {
                 d = d3.superformulaTypes[ii]
                 n = d3.superformula().size(size*50).segments(360).type(d)
@@ -121,35 +126,57 @@
                 d3.select(".big").transition().duration(0).attr("d", d)
             })
         })
-        
+
        $('.close-button').hide()
-       
 
 
+var size = window.innerHeight/2;
 var svg = d3.select(".intro-svg")
     .attr("width", window.innerWidth)
-    .attr("height", window.innerHeight)
-    .attr("top", 0)
-    .attr("left",0)
+    .attr("height", size/1.5)
+    //.attr("top", 0)
+    //.attr("left",0)
 
-    var size = window.innerHeight/2;
+
 
     var x = d3.scale.ordinal()
         .domain(d3.superformulaTypes)
-        .rangePoints([0, 960], 1);
+        .rangePoints([0, 400], 1);
 
     var big = d3.superformula()
         .type("circle")
         .size(size * 50)
         .segments(360);
 
+
+
     var path = svg.append("path")
         .attr("class", "big")
-        .attr("transform", "translate("+window.innerWidth/2+","+size/3+")")
+.attr("transform", "translate("+window.innerWidth/2+","+size/3+")")
         .attr("d", big)
         .attr("stroke",'#aaa')
         .attr("fill","transparent")
         .attr("stroke-width","5px")
+
+        var small = d3.superformula()
+            .type(function(d) { return d; })
+            .size(size);
+
+  d3.select(".small").attr("width",400).selectAll("a")
+    .data(d3.superformulaTypes)
+  .enter().append("a")
+    .attr("xlink:title", String)
+    .attr("transform", function(d, i) { return "translate("+ x(d) + ",40)"; })
+  .append("path")
+    .attr("class", "small")
+    .attr("d", small)
+    .on("mousedown", function() { d3.select(this).style("fill", "aliceblue"); })
+    .on("mouseup", function() { d3.select(this).style("fill", null); })
+    .on("click", function(d) {
+      d3.select(".big").transition().duration(500).attr("d", big.type(d))
+      window.loopit = false
+      console.log(window.loopit)
+    });
 
     var ii = d3.superformulaTypes.indexOf("circle")+1;
     window.loopit=true
@@ -157,27 +184,27 @@ var svg = d3.select(".intro-svg")
         if(window.loopit) {
           d = d3.superformulaTypes[ii]
           n = d3.superformula().size(size*50).segments(360).type(d)
-      
+
           parameters.forEach(function(p) {
               data = d3.superformulaObjects[d]
               s[p] = data[p]
           })
-          
+
           gui.__controllers.forEach(function(g){
               g.updateDisplay()
           })
-         
+
           d3.select(".big").transition().duration(1000).attr("d",n)
             .each("end", loop);
             ii = (ii+1 == d3.superformulaTypes.length) ? 0 : ii+1;
         }
     }
     loop()
-    
+
         window.onresize = function() {
       path.attr("transform", "translate("+window.innerWidth/2+","+size/3+")")
     }
-        
+
         $("#controls").hide()
         hide=true
         $(".intro-text").click(function() {
@@ -188,23 +215,23 @@ var svg = d3.select(".intro-svg")
             else{
                 $("#controls").fadeOut()
                 hide=true
-            } 
-           
+            }
+
         })
         $("svg").click(function() {
             //if(window.loopit) {
             //    window.loopit=false
            // }
            // else{
-                window.loopit=true;
+
                 loop()
            // }
         })
 }
 
 
-    
-    
+
+
 
 </script>
 

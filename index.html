@@ -124,6 +124,30 @@
                 n = d3.superformula().size(size*50).segments(360).type(d)
                 d = n.param(p,v)
                 d3.select(".big").transition().duration(0).attr("d", d)
+
+
+
+                d3.select(".small").attr("width",300).selectAll("a")
+                  .data(d3.superformulaTypes)
+                .enter().append("a")
+                  .attr("xlink:title", String)
+                  .attr("id", String)
+                  .attr("transform", function(d, i) { return "translate("+ x(d) + ",40)"; })
+                .append("path")
+                  .attr("class", "small")
+                  .attr("d", small)
+                  .on("mousedown", function() { d3.select(this).style("fill", "aliceblue"); })
+                  .on("mouseup", function() { d3.select(this).style("fill", null); })
+                  .on("click", function(d) {
+                    d3.select(".big").transition().duration(1000).attr("d", big.type(d))
+
+                    gui.__controllers.forEach(function(g){
+                        g.updateDisplay()
+                    })
+                    //d.attr("d",small.type(d))
+                    window.loopit = false
+
+                  });
             })
         })
 
@@ -141,7 +165,7 @@ var svg = d3.select(".intro-svg")
 
     var x = d3.scale.ordinal()
         .domain(d3.superformulaTypes)
-        .rangePoints([0, 400], 1);
+        .rangePoints([0, 300], 1);
 
     var big = d3.superformula()
         .type("circle")
@@ -162,10 +186,11 @@ var svg = d3.select(".intro-svg")
             .type(function(d) { return d; })
             .size(size);
 
-  d3.select(".small").attr("width",400).selectAll("a")
+  d3.select(".small").attr("width",300).selectAll("a")
     .data(d3.superformulaTypes)
   .enter().append("a")
     .attr("xlink:title", String)
+    .attr("id", String)
     .attr("transform", function(d, i) { return "translate("+ x(d) + ",40)"; })
   .append("path")
     .attr("class", "small")
@@ -173,9 +198,16 @@ var svg = d3.select(".intro-svg")
     .on("mousedown", function() { d3.select(this).style("fill", "aliceblue"); })
     .on("mouseup", function() { d3.select(this).style("fill", null); })
     .on("click", function(d) {
-      d3.select(".big").transition().duration(500).attr("d", big.type(d))
+      d3.select(".big").transition().duration(1000).attr("d", big.type(d))
+      parameters.forEach(function(p) {
+          data = d3.superformulaObjects[d]
+          s[p] = data[p]
+      })
+      gui.__controllers.forEach(function(g){
+          g.updateDisplay()
+      })
       window.loopit = false
-      console.log(window.loopit)
+
     });
 
     var ii = d3.superformulaTypes.indexOf("circle")+1;
@@ -210,23 +242,18 @@ var svg = d3.select(".intro-svg")
         $(".intro-text").click(function() {
             if(hide) {
                 $("#controls").fadeIn()
+                window.loopit=false
                 hide=false
             }
             else{
                 $("#controls").fadeOut()
+                window.loopit=true
+                loop()
                 hide=true
             }
 
         })
-        $("svg").click(function() {
-            //if(window.loopit) {
-            //    window.loopit=false
-           // }
-           // else{
 
-                loop()
-           // }
-        })
 }
 
 

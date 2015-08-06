@@ -135,6 +135,7 @@
 
 
 
+
             })
         })
 
@@ -176,11 +177,9 @@ var svg = d3.select(".intro-svg")
   d3.select(".small").attr("width",300).selectAll("a")
     .data(d3.superformulaTypes)
   .enter().append("a")
-    .attr("xlink:title", String)
-
     .attr("transform", function(d, i) { return "translate("+ x(d) + ",40)"; })
   .append("path").attr("id", String)
-    .attr("class", "small")
+    .attr("class", "small smallo")
     .attr("d", small)
     .on("mousedown", function() { d3.select(this).style("fill", "aliceblue"); })
     .on("mouseup", function() { d3.select(this).style("fill", null); })
@@ -194,6 +193,8 @@ var svg = d3.select(".intro-svg")
           g.updateDisplay()
       })
       window.selected = d
+      d3.selectAll(".smallo").style("fill","steelblue")
+      d3.select("#"+window.selected).style("fill","lightsteelblue")
 
       window.loopit = false
 
@@ -204,6 +205,7 @@ var svg = d3.select(".intro-svg")
     function loop() {
         if(window.loopit) {
           d = d3.superformulaTypes[ii]
+          d2 = d3.superformulaTypes[(ii==0)?d3.superformulaTypes.length-1:ii-1]
           window.selected = d
           n = d3.superformula().size(size*50).segments(250).type(d)
 
@@ -215,6 +217,9 @@ var svg = d3.select(".intro-svg")
           gui.__controllers.forEach(function(g){
               g.updateDisplay()
           })
+
+          d3.selectAll(".smallo").style("fill","steelblue")
+          d3.select("#"+window.selected).style("fill","lightsteelblue")
 
           d3.select(".big").transition().duration(1000).attr("d",n)
           .delay(500)

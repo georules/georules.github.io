@@ -110,7 +110,7 @@
 
     })
 
-
+    window.selected = null
     window.onload = function() {
         var s = new shape()
         var gui = new dat.GUI({autoPlace:false, width:"100%"})
@@ -120,34 +120,21 @@
             var controller = gui.add(s,p).min(-10).max(100).step(0.001)
 
             controller.onChange(function(v) {
-                d = d3.superformulaTypes[ii]
-                n = d3.superformula().size(size*50).segments(360).type(d)
+              console.log(window.selected)
+                //t = d3.superformulaTypes[window.selected]
+                n = d3.superformula().size(size*50).segments(360).type(window.selected)
                 d = n.param(p,v)
                 d3.select(".big").transition().duration(0).attr("d", d)
 
 
+                    data = d3.superformulaObjects[window.selected]
+                    data[p] = v
 
-                d3.select(".small").attr("width",300).selectAll("a")
-                  .data(d3.superformulaTypes)
-                .enter().append("a")
-                  .attr("xlink:title", String)
-                  .attr("id", String)
-                  .attr("transform", function(d, i) { return "translate("+ x(d) + ",40)"; })
-                .append("path")
-                  .attr("class", "small")
-                  .attr("d", small)
-                  .on("mousedown", function() { d3.select(this).style("fill", "aliceblue"); })
-                  .on("mouseup", function() { d3.select(this).style("fill", null); })
-                  .on("click", function(d) {
-                    d3.select(".big").transition().duration(1000).attr("d", big.type(d))
 
-                    gui.__controllers.forEach(function(g){
-                        g.updateDisplay()
-                    })
-                    //d.attr("d",small.type(d))
-                    window.loopit = false
+                d3.select("#"+window.selected).transition().duration(0).attr("d",d.size(size))
 
-                  });
+
+
             })
         })
 
@@ -190,9 +177,9 @@ var svg = d3.select(".intro-svg")
     .data(d3.superformulaTypes)
   .enter().append("a")
     .attr("xlink:title", String)
-    .attr("id", String)
+
     .attr("transform", function(d, i) { return "translate("+ x(d) + ",40)"; })
-  .append("path")
+  .append("path").attr("id", String)
     .attr("class", "small")
     .attr("d", small)
     .on("mousedown", function() { d3.select(this).style("fill", "aliceblue"); })
@@ -206,6 +193,8 @@ var svg = d3.select(".intro-svg")
       gui.__controllers.forEach(function(g){
           g.updateDisplay()
       })
+      window.selected = d
+
       window.loopit = false
 
     });
@@ -215,6 +204,7 @@ var svg = d3.select(".intro-svg")
     function loop() {
         if(window.loopit) {
           d = d3.superformulaTypes[ii]
+          window.selected = d
           n = d3.superformula().size(size*50).segments(360).type(d)
 
           parameters.forEach(function(p) {

@@ -905,7 +905,7 @@ dat.controllers.NumberControllerBox = (function (NumberController, dom, common) 
         updateDisplay: function() {
 
           this.__input.value = this.__truncationSuspended ? this.getValue() : roundToDecimal(this.getValue(), this.__precision);
-          this.__input.value = this.getValue()
+          this.__input.value = roundToDecimal(this.getValue(),3)
           return NumberControllerBox.superclass.prototype.updateDisplay.call(this);
         }
 

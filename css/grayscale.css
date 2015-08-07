@@ -3,8 +3,13 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
-
+.content{
+  margin-top:70px;
+}
+.popover-content{
+  color:#000;
+  font-family: "Colaborate-Thin","Helvetica Neue", Helvetica, sans-serif;
+}
 .intro-svg{
   min-height: 225px;
 }
@@ -51,8 +56,8 @@
 .intro-text span{
   /*text-decoration: underline;
   text-decoration-style: dotted;*/
-  /*border-bottom: 1px dotted;
-  cursor: pointer;*/
+  border-bottom: 1px dotted;
+  cursor: pointer;
 
 }
 
@@ -152,12 +157,15 @@ a:focus {
 
 .navbar-custom .navbar-brand .navbar-toggle {
     padding: 4px 6px;
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
+}
+.navbar-brand {
+  font-size: 20px;
 }
 
 nav a {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .navbar-custom .navbar-brand .navbar-toggle:focus,

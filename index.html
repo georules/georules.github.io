@@ -33,8 +33,7 @@
                     codeslam
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-sagittis lacus vel augue laoreet rutrum faucibus.">
+                <a id="main" class="navbar-brand page-scroll" href="#">
                     codeslam
                 </a>
 
@@ -43,15 +42,11 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden active">
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">code</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">games</a>
+                        <a class="page-scroll" href="#" id="games">games</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#">toys</a>
@@ -79,7 +74,8 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="brand-heading">codeslam</h1>
-                        <p class="intro-text"><span>interactive code experiences</span></p>
+                        <p class="intro-text"><span data-container="body" data-toggle="popover" data-placement="bottom"
+                          data-content="stop taking coding so seriously. have fun and play.">interactive code experiences</span></p>
                     </div>
                 </div>
                 <div class="row">
@@ -102,6 +98,9 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
         </footer>
 
     </section>
+  </div>
+  <div class="content">
+
   </div>
 
 
@@ -290,7 +289,20 @@ hide = true
     };
 
         $("#controls").hide()
+        $(".content").hide()
 
+$("#games").click(function() {
+  $(".main").fadeOut("fast", function() {
+    $(".content").html("<h1>games</h1>")
+    $(".content").fadeIn()
+  })
+})
+
+$("#main").click(function() {
+  $(".content").fadeOut("fast", function() {
+    $(".main").fadeIn("fast")
+  })
+})
 
 }
 

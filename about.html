@@ -28,20 +28,15 @@
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-
+              
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    codeslam
+                  codeslam
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-sagittis lacus vel augue laoreet rutrum faucibus.">
-                    codeslam
-                </a>
-
 
             </div>
 
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <div class="collapse navbar-collapse navbar-center navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden active">
@@ -63,11 +58,8 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-
-
         </div>
         <!-- /.container -->
-
     </nav>
 
 <div class="main">
@@ -98,7 +90,9 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
         </div>
 
         <footer>
-
+            <div class="container text-center">
+                <a href="/about">about codeslam</a>
+            </div>
         </footer>
 
     </section>
@@ -117,7 +111,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
     <script src="js/superformula.js"></script>
     <script src="js/dat.gui.js"></script>
 <script>
-$("[data-toggle=popover]").popover();
+
 //mod from http://bl.ocks.org/mbostock/3081153 and http://bl.ocks.org/mbostock/1020902
 //http://bl.ocks.org/mbostock/1021103
 //
@@ -276,10 +270,6 @@ hide = true
 
         window.onresize = function() {
       path.attr("transform", "translate("+window.innerWidth/2+","+svgtranslatey+")")
-      var size = window.innerHeight/2;
-      var svg = d3.select(".intro-svg")
-          .attr("width", window.innerWidth)
-          .attr("height", size/1.5)
     }
 
 

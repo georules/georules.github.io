@@ -4,9 +4,30 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+.main{
+  padding-top:50px;
+}
+.navbar-custom{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+ .navbar-center {
+
+         text-align: center; /* Set this */
+
+
+         padding-bottom: 0;
+
+ }
+ .navbar-nav {
+    display: inline-block;
+    float: none;
+    margin: 0;
+}
+
  .small {
    stroke:steelblue;
    fill: steelblue;
+   cursor:pointer;
  }
 
 
@@ -26,14 +47,23 @@
 .intro-text span{
   /*text-decoration: underline;
   text-decoration-style: dotted;*/
-  border-bottom: 1px dotted;
+  /*border-bottom: 1px dotted;
+  cursor: pointer;*/
 
+}
+
+.intro-text span :hover {
+  cursor: pointer;
 }
 
  @font-face {
       font-family: "Colaborate-Thin";
       src: url("../fonts/Colaborate/ColabThi.otf");
     }
+    @font-face {
+         font-family: "Colaborate-Bold";
+         src: url("../fonts/Colaborate/ColabBol.otf");
+       }
 
 .logo {
   font-family: "Colaborate-Thin","Helvetica Neue", Helvetica, sans-serif;
@@ -82,7 +112,8 @@ p {
 }
 
 a {
-    color: #42dca3;
+    color: #F2FF00;
+    font-size: 20px;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -91,7 +122,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #1d9b6c;
+    color: #ee0;
 }
 
 .light {
@@ -102,8 +133,9 @@ a:focus {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #000;
+    font-family: "Colaborate-Bold","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+
 }
 
 .navbar-custom .navbar-brand {
@@ -120,19 +152,23 @@ a:focus {
     color: #fff;
 }
 
+nav a {
+  font-size: 16px;
+}
+
 .navbar-custom .navbar-brand .navbar-toggle:focus,
 .navbar-custom .navbar-brand .navbar-toggle:active {
     outline: 0;
 }
 
 .navbar-custom a {
-    color: #fff;
+    color: #F2FF00;
 }
 
 .navbar-custom .nav li a {
-    -webkit-transition: background .3s ease-in-out;
-    -moz-transition: background .3s ease-in-out;
-    transition: background .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .navbar-custom .nav li a:hover {
@@ -161,10 +197,10 @@ a:focus {
 
 @media(min-width:768px) {
     .navbar-custom {
-        padding: 20px 0;
+        padding: 5px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        background: 0 0;
+
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -173,15 +209,15 @@ a:focus {
     .navbar-custom.top-nav-collapse {
         padding: 0;
         border-bottom: 1px solid rgba(255,255,255,.3);
-        background: #000;
+
     }
 }
 
 .intro {
     display: table;
     width: 100%;
-    height: auto;
-    min-height:600px;
+
+
     padding:  0;
     text-align: center;
     color: #fff;
@@ -205,7 +241,7 @@ a:focus {
 
 @media(min-width:768px) {
     .intro {
-        height: 100%;
+
         padding: 0;
     }
 
@@ -376,7 +412,7 @@ ul.banner-social-buttons {
 }
 
 footer {
-    padding: 50px 0;
+
 }
 
 footer p {

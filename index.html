@@ -75,7 +75,7 @@
                     <div class="col-md-12">
                         <h1 class="brand-heading">codeslam</h1>
                         <p class="intro-text"><span data-container="body" data-toggle="popover" data-placement="bottom"
-                          data-content="stop taking coding so seriously. have fun and play.">interactive code experiences</span></p>
+                          data-content="stop taking coding so seriously. have fun.">interactive code experiences</span></p>
                     </div>
                 </div>
                 <div class="row">
@@ -303,6 +303,15 @@ $("#main").click(function() {
     $(".main").fadeIn("fast")
   })
 })
+
+$('.navbar-collapse ul li a').click(function() {
+    $('.navbar-toggle:visible').click();
+});
+
+$('.navbar-brand').click(function() {
+    $('.navbar-toggle:visible').click();
+});
+
 
 }
 

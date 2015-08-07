@@ -275,6 +275,8 @@ hide = true
     loop()
 
         window.onresize = function() {
+          var size = window.innerHeight/2;
+          svgtranslatey = size/3+25
       path.attr("transform", "translate("+window.innerWidth/2+","+svgtranslatey+")")
       var size = window.innerHeight/2;
       var svg = d3.select(".intro-svg")

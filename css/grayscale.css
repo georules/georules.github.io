@@ -85,6 +85,10 @@
          font-family: "Colaborate-Bold";
          src: url("../fonts/Colaborate/ColabBol.otf");
        }
+       @font-face {
+            font-family: "Colaborate";
+            src: url("../fonts/Colaborate/ColabReg.otf");
+          }
 
 .logo {
   font-family: "Colaborate-Thin","Helvetica Neue", Helvetica, sans-serif;
@@ -154,7 +158,7 @@ a:focus {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: lowercase;
-    font-family: "Colaborate-Bold","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Colaborate","Helvetica Neue",Helvetica,Arial,sans-serif;
 
 
 }

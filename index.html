@@ -304,7 +304,7 @@ var CodeSlam = function() {
 
 CodeSlam.prototype.log = function() {
   $(".main").fadeOut("fast", function() {
-    $(".content").html("<h1>log</h1>")
+    $(".content").html("<div class='container'><h1>.log()</h1></div>")
     $(".content").fadeIn()
   })
   return this;

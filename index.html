@@ -30,7 +30,6 @@
             <div class="navbar-header">
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    codeslam
                     <i class="fa fa-bars"></i>
                 </button>
                 <a id="main" class="navbar-brand page-scroll" href="#">
@@ -40,20 +39,17 @@
 
             </div>
 
+
+
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <li class="hidden active">
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#" id="games">games</a>
+                        <a class="page-scroll" href="#" id="log">.log()</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#">toys</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#">tools</a>
-                    </li>
+
 
                 </ul>
             </div>
@@ -244,10 +240,13 @@ hide = true
 
     });
 
-    var ii = d3.superformulaTypes.indexOf("circle")+1;
+    window.ii = d3.superformulaTypes.indexOf("circle")+1;
     window.loopit=true
     function loop() {
+
+        ii = window.ii
         if(window.loopit) {
+
           d = d3.superformulaTypes[ii]
           d2 = d3.superformulaTypes[(ii==0)?d3.superformulaTypes.length-1:ii-1]
           window.selected = d
@@ -291,24 +290,47 @@ hide = true
         $("#controls").hide()
         $(".content").hide()
 
-$("#games").click(function() {
-  $(".main").fadeOut("fast", function() {
-    $(".content").html("<h1>games</h1>")
-    $(".content").fadeIn()
-  })
-})
 
-$("#main").click(function() {
-  $(".content").fadeOut("fast", function() {
-    $(".main").fadeIn("fast")
-  })
-})
+
+
 
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
 
+var CodeSlam = function() {
+  console.log("codeslam functions", ["main", "log"])
+}
 
+CodeSlam.prototype.log = function() {
+  $(".main").fadeOut("fast", function() {
+    $(".content").html("<h1>log</h1>")
+    $(".content").fadeIn()
+  })
+  return this;
+}
+
+CodeSlam.prototype.main = function(d) {
+  if (typeof(d) !== 'undefined') {
+    window.ii = d
+  }
+  else {
+    //loop()
+  }
+  $(".content").fadeOut("fast", function() {
+    $(".main").fadeIn("fast")
+  })
+  return this;
+}
+
+codeslam = new CodeSlam()
+
+$("#log").click(function() {
+  codeslam.log()
+})
+$("#main").click(function() {
+  codeslam.main();
+})
 
 
 }

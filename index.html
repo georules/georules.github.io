@@ -145,7 +145,7 @@ $("[data-toggle=popover]").popover();
             var controller = gui.add(s,p).min(-10).max(20).step(0.001)
 
             controller.onChange(function(v) {
-              console.log(window.selected)
+              //console.log(window.selected)
                 //t = d3.superformulaTypes[window.selected]
                 n = d3.superformula().size(size*50).segments(250).type(window.selected)
                 d = n.param(p,v)
@@ -224,7 +224,7 @@ hide = true
 
       $("#controls").slideFadeToggle()
 
-      console.log("clock")
+      //console.log("clock")
         if(hide) {
             window.loopit=false
 

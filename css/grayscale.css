@@ -14,7 +14,7 @@
   min-height: 225px;
 }
 .main{
-  padding-top:50px;
+  padding-top:0px;
 }
 .navbar-custom{
   background-color: rgba(0, 0, 0, 0.2);
@@ -65,16 +65,32 @@
   z-index: 100;
 }
 
-.intro-text span{
-  /*text-decoration: underline;
-  text-decoration-style: dotted;*/
-  border-bottom: 1px dotted;
-  cursor: pointer;
 
+
+
+
+.intro-text-no {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  bottom: 0;
+  left: 25%;
+  background-color: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.intro-text-doit {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-.intro-text span :hover {
-  cursor: pointer;
+.brand-heading {
+  margin:0px;
 }
 
  @font-face {
@@ -447,26 +463,8 @@ footer p {
     margin: 0;
 }
 
-::-moz-selection {
-    text-shadow: none;
-    background: #fcfcfc;
-    background: rgba(255,255,255,.2);
-}
 
-::selection {
-    text-shadow: none;
-    background: #fcfcfc;
-    background: rgba(255,255,255,.2);
-}
-
-img::selection {
-    background: 0 0;
-}
-
-img::-moz-selection {
-    background: 0 0;
-}
 
 body {
-    webkit-tap-highlight-color: rgba(255,255,255,.2);
+
 }

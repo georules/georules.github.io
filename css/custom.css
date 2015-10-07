@@ -19,6 +19,12 @@ ul {
   margin-left:-10px;
 }
 
+
+
+#controls {
+  margin-top:0px;
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;

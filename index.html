@@ -25,7 +25,7 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <!--<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
 
@@ -53,13 +53,12 @@
 
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+
 
 
         </div>
-        <!-- /.container -->
 
-    </nav>
+    </nav> -->
 
 <div class="main">
 <svg class="intro-svg"></svg>
@@ -67,25 +66,104 @@
 
         <div class="intro-body">
             <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <svg class="small"></svg>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                      <div id="controls">
+                      </div>
+                  </div>
+              </div>
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="brand-heading">codeslam</h1>
-                        <p class="intro-text"><span data-container="body" data-toggle="popover" data-placement="bottom"
-                          data-content="stop taking coding so seriously. have fun.">interactive code experiences</span></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="controls">
+                        <!--<p class="intro-text"><span data-container="body" data-toggle="popover" data-placement="bottom"
+                          data-content="stop taking coding so seriously. have fun.">interactive code experiences</span></p>-->
+                          <div class="intro-text-no"></div>
 
-                        </div>
                     </div>
                 </div>
+
                 <div class="row">
                   <div class="col-md-12">
-                    <svg class="small"></svg>
+                    <p class="stuff" style="display:none;">
+                      Programming is a creative endeavor.  Logic is your tool.
+                      <br>
+                      Programming is art.  Output is not the only canvas of expression.
+                      <br>
+                      Programming is fun.  Stop learning, start playing.
+                    </p>
                   </div>
                 </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#mc_embed_signup input.button {
+  display: block;
+  position: relative;
+  background-color: steelblue;
+  padding: 0;
+  margin: 0 auto ;
+  border: 0 none;
+  border-bottom: steelblue 3px solid;
+  border-radius: 6px;
+  color: #F2FF00;
+  cursor: pointer;
+  font-size: 14px;
+  width: 140px;
+  height: 36px;
+  line-height: 36px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+}
+#mc_embed_signup .button:hover {
+  background-color:lightsteelblue;
+}
+#mc_embed_signup{
+  text-align: center;
+}
+#mc_embed_signup input.email{
+  text-align: center;
+  width:400px;
+  color: black;
+  margin:0 auto;
+
+}
+#mc_embed_signup {
+  display:none;
+  padding:0;
+  margin:0 auto;
+}
+#mc_embed_signup form {
+  padding:0;
+  margin:0 auto;
+}
+/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div class="stuff" id="mc_embed_signup">
+<form action="//codeslam.us11.list-manage.com/subscribe/post?u=e2e5a04852a30d93a8734a602&amp;id=2d6df73d73" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <div id="mc_embed_signup_scroll">
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="sign up with your email address to hear when codeslams are here" required>
+  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+  <div style="position: absolute; left: -5000px;"><input type="text" name="b_e2e5a04852a30d93a8734a602_2d6df73d73" tabindex="-1" value=""></div>
+  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+  </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+                  </div>
+
             </div>
         </div>
 
@@ -112,6 +190,17 @@
     <script src="js/superformula.js"></script>
     <script src="js/dat.gui.js"></script>
 <script>
+
+$(document).ready(function() {
+  setTimeout(function() {
+    console.log("doit")
+    $(".intro-text-no").addClass("intro-text-doit")
+    $(".stuff").fadeIn()
+  },500)
+
+})
+
+
 $("[data-toggle=popover]").popover();
 //mod from http://bl.ocks.org/mbostock/3081153 and http://bl.ocks.org/mbostock/1020902
 //http://bl.ocks.org/mbostock/1021103

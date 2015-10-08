@@ -87,7 +87,7 @@
                     </div>
                 </div>
 
-                <div class="row stuff" style="display:none;">
+                <div class="row stuff" style="">
                   <div class="col-md-12">
                     <p>
                       Programming is a creative endeavor.  Logic is your tool.
@@ -106,41 +106,53 @@
 <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 #mc_embed_signup input.button {
-  display: block;
-  position: relative;
-  background-color: steelblue;
-  padding: 0;
-  margin: 0 auto ;
-  border: 0 none;
-  border-bottom: steelblue 3px solid;
-  border-radius: 6px;
-  color: #F2FF00;
-  cursor: pointer;
-  font-size: 14px;
-  width: 140px;
-  height: 36px;
-  line-height: 36px;
+  width: 25%;
+  height: 46px;
+  background: #FFDA6C;
+  font-family: inherit;
   font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: top;
+  color: grey;
+  letter-spacing: 1px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+display: inline-block;
+margin:0;
+clear:none;
 }
 #mc_embed_signup .button:hover {
   background-color:lightsteelblue;
 }
 #mc_embed_signup{
   text-align: center;
+  min-width:300px;
 }
 #mc_embed_signup input.email{
-  text-align: center;
-  width:35%;
-  color: black;
-  margin:0 auto;
-
+  width: 75%;
+  background: #FDFCFB;
+  font-family: inherit;
+  color: #737373;
+  letter-spacing: 1px;
+  text-indent: 5%;
+  border-radius: 5px 0 0 5px;
+  height: 46px;
+  display: inline-block;
+  float: left;
+  margin:0;
+  clear:none;
+  outline: 1px solid #FFDA6C;
 }
+
+input:focus {
+  outline: none;
+  outline: 1px solid #FFDA6C;
+  box-shadow: 0 0 2px #FFDA6C;
+}
+
 #mc_embed_signup {
   padding:0;
   margin:0 auto;
+  align-items: center;
 }
 #mc_embed_signup form {
   padding:0;
@@ -151,12 +163,12 @@
 </style>
 <div  id="mc_embed_signup">
 <form action="//codeslam.us11.list-manage.com/subscribe/post?u=e2e5a04852a30d93a8734a602&amp;id=2d6df73d73" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-  <div id="mc_embed_signup_scroll">
+  <span style="float:left;position: absolute; left: -5000px;">
+    <input type="text" name="b_e2e5a04852a30d93a8734a602_2d6df73d73" tabindex="-1" value="">
+  </span>
 <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email" required>
-  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-  <div style="position: absolute; left: -5000px;"><input type="text" name="b_e2e5a04852a30d93a8734a602_2d6df73d73" tabindex="-1" value=""></div>
-  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-  </div>
+
+  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 </form>
 </div>
 

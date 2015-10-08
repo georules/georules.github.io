@@ -116,18 +116,20 @@
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   transition: background .3s ease-in-out;
-display: inline-block;
-margin:0 auto;
-clear:none;
+  display: inline-block;
+  margin:0 auto;
+  clear:none;
+
 }
 #mc_embed_signup .button:hover {
   background-color:lightsteelblue;
 }
 #mc_embed_signup{
   text-align: center;
-  min-width:400px;;
+  min-width:300px;
 }
 #mc_embed_signup input.email{
+  max-width:200px;
   width: 75%;
   background: #FDFCFB;
   font-family: inherit;
@@ -137,10 +139,9 @@ clear:none;
   border-radius: 5px 0 0 5px;
   height: 46px;
   display: inline-block;
-  float: left;
   margin:0 auto;
   clear:none;
-  outline: 1px solid #FFDA6C;
+  border: 1px solid #FFDA6C;
 }
 
 input:focus {
@@ -159,6 +160,7 @@ input:focus {
 #mc_embed_signup form {
   padding:0;
   margin:0 auto;
+  text-align:center;
 }
 /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */

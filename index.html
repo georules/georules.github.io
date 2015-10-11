@@ -1,3 +1,10 @@
+<!--
+top animation modified from the following blocks using d3.js
+http://bl.ocks.org/mbostock/1021103
+http://bl.ocks.org/mbostock/1020902
+http://bl.ocks.org/mbostock/3081153
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -213,11 +220,9 @@ footer {
 
 $(document).ready(function() {
   setTimeout(function() {
-    console.log("doit")
     $(".intro-text-no").addClass("intro-text-doit")
     $(".stuff").fadeIn()
   },1500)
-
 })
 
 
@@ -408,7 +413,8 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 var CodeSlam = function() {
-  console.log("codeslam functions", ["main", "log"])
+  console.log("top animation modifed from d3.js blocks: http://bl.ocks.org/mbostock/1021103,http://bl.ocks.org/mbostock/1020902, http://bl.ocks.org/mbostock/3081153")
+  //console.log("codeslam functions", ["main", "log"])
 }
 
 CodeSlam.prototype.log = function() {

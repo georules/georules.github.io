@@ -1,34 +1,276 @@
 <html>
 	<head>
+		<title>CodeSlam CS Crash Course</title>
+
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.js"></script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/mode/javascript/javascript.min.js"></script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+		<script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<link href = "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/codemirror.min.css" type='text/css' rel="stylesheet">
+		<link href = "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.9.0/theme/mdn-like.min.css" type='text/css' rel="stylesheet">
+		<link href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+		<style>
+
+		html, body {
+    	height:100%;
+		}
+			.codefont {
+				font-family: 'Source Code Pro';
+			}
+			body {
+
+				background-color: #6ad;
+				padding-top: 70px;
+				padding-bottom: 70px;
+				font-size: 16px;
+			}
+			.container {
+				background-color: #f6f7fc;
+				height:auto;
+			}
+			.jumbotron {
+				margin-top:20px;
+				background-color: #6ad;
+				padding-left: 30px;
+				padding-right:30px;
+			}
+			.runit {
+				font-weight: 800;
+			}
+			.topics {
+				text-indent: -5em; padding-left: 5em;
+			}
+			.CodeMirror {
+				height:450px;
+				font-family: 'Source Code Pro';
+			}
+			nav li:hover {
+				background-color:#e7e7e7;
+			}
+			#how{
+				background-color:#e7e7e7;
+			}
+			#event{
+				background-color:#e7e7e7;
+			}
+			#signup{
+				background-color:#e7e7e7;
+			}
+			.section{
+				padding:5%;
+			}
+		</style>
 	</head>
-	<body>
-CS101 Crash Course
-An introduction to Computer Science in a 2 months
-Computational Thinking, Problem Solving
-Basic Programming (Python will primarily be used)
-	Data structure, data manipulation,
-conditionals, control flow, functions
-Basics of symbolic representation, memory, algorithms, and computational cost
+	<body id="top">
+		<nav class="navbar navbar-default navbar-fixed-top codefont">
+      <div class="container">
+				<div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#top">Crash Course</a>
+        </div>
+				<div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+						<li><a href="#event">Event Details</a></li>
+						<li><a href="#how">How it Works</a></li>
+						<li><a href="#instructor">About the Instructor</a></li>
+						<li><a href="#signup">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-If you do not know what the topics above are, this class is for you!
+		<div class="fullscreen content-a" >
+			<div class="header jumbotron content-b">
+				<span class="codefont">
+				<h1>codeslam's</h1>
+				<h2>Computer Science Crash Course</h2>
+				</span>
+				<h2><em>an introduction to Computer Science in 2 months</em></h2>
+				<h3 class="topics codefont">topics = ["Computational thinking",
+					"Problem solving","Basic programming", "Data structures", "Data manipulation", "Conditionals", "Control flow", "Functions", "Symbolic representation", "Memory", "Algorithms", "Computational cost"]</h3>
 
+				<p>If you do not know what the topics above are (or have a hard time reading it), and you are ready to learn a lot in a short time, this class is for you!</p>
+				<ul>
+					<li><b>First meeting</b>: January 14, 2016 at 5pm in the Florida Blue Room at Domi Station.</li>
+					<li>Weekly recurring meetings will continue until February 25, day/time to be determined.</li>
+					<li>Total cost of attendance is $200, due at the end of the first meeting if you are interested!</li>
+				</ul>
+				<br>
+				<a class="btn btn-lg btn-warning" href="#event" role="button">Learn More</a>
+				<a class="btn btn-lg btn-success" href="#signup" role="button">Sign up!</a>
+			</div>
+		</div>
+
+		<div class="section coding" id="event">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Event Details</h2>
+				</div>
+			</div>
+			<div class="row">
+			<div class="col-md-8 codefont">
+				<button class="btn btn-lg runit">event-details.js</button>
+<textarea id="code">
 event = {}
-event.title = “Computer Science 101 Crash Course”
-event.location = “Domi Station”
-event.start = new Date(“January 7, 2016”)
-event.end = new Date(“February 25, 2016”)
+event.title = 'Computer Science 101 Crash Course'
+event.location = 'Domi Station'
+event.start = new Date('January 14, 2016')
+event.end = new Date('February 25, 2016')
 event.meetingTime = null // To be determined
-event.instructor = “Geo Miller”
+event.instructor = 'Geo Miller'
 event.cost = 200.00
-event.duration = Math.round((event.end-event.start)/1000/60/60/24/25)
+event.duration = event.end-event.start
 
-How it works:
-MATERIALS are provided free by Udacity’s Intro to Computer Science course - a 7 unit course designed for 3 months @ 6 hours/week.
+function msToMonths(time) {
+	return Math.round(time/1000/60/60/24/25)
+}
 
-YOU watch online videos and complete online quizzes prior to class meetings.
+Object.keys(event).forEach(function(k){
+	if (k == "duration") {
+		console.log(k, ": " + msToMonths(event[k]) + " months")
+	}
+	else {
+		console.log(k, ": " + event[k])
+	}
+})</textarea>
 
-CLASS meetings occur weekly for 2-4 hours.  Class will include reviewing materials, extra lectures, group activities, and completing problem sets.  Class size is limited to 10 students committed to the coursework.
+			</div>
+			<div class="col-md-4">
 
-GEO will lecture on current and related topics, personal mentorship & help, office hours by appointment.  I will get you through this course!
+					<button id = "run" class="runit btn btn-lg btn-outline-inverse btn-primary" style="color: rgb(37, 110, 173); background-color: rgba(66, 139, 202, 0);">Run the Code</button>
+					<textarea id="output"></textarea>
+
+			</div>
+		</div>
+		</div>
+
+		<div class="section" id="how">
+			<h2>How it Works</h2>
+			<div class="row">
+				<div class="col-md-3">
+					<h3>MATERIALS</h3>
+					<p>are provided free by:</p>
+					<ul>
+						<li>Udacity's <a href="https://www.udacity.com/course/intro-to-computer-science--cs101" target="_blank">Intro to Computer Science</a> course*.  The materials are designed for 3 months @ 6 hours/week.  With the help of codeslam, you will complete these materials in 2 months, and learn more in the process.</p>
+						<li>codeslam free course materials and tools</li>
+						<li>other free materials on the internet</li>
+					</ul>
+					<p class="small">*This course is not affiliated with Udacity.  This course is not selling Udacity course materials.  Materials are Creative Commons licensed and free to you.</p>
+				</div>
+				<div class="col-md-3">
+					<h3>YOU</h3>
+					<p>already know that computer science is important in today's world and want to learn it.  You will watch online videos and complete online quizzes prior to class meetings.</p>
+					<p>You will need to bring a laptop with a web browser installed to class.</p>
+				</div>
+				<div class="col-md-3">
+					<h3>CLASS</h3>
+					<p>meetings occur weekly for 2-4 hours.  Class will include:
+						<ul>
+							<li>reviewing materials</li>
+							<li>extra lectures</li>
+							<li>group activities</li>
+							<li>completing problem sets</li>
+						</ul>
+						Class size is limited to 10 students committed to the coursework.</p>
+				</div>
+				<div class="col-md-3">
+					<h3>GEO</h3>
+					<p><a href="#instructor">the instructor</a> will:
+						<ul>
+							<li>lecture on current and related topics</li>
+							<li>provide a schedule for course checkpoints</li>
+							<li>assist in completing problem sets</li>
+							<li>offer personal mentorship</li>
+							<li>hold office hours by appointment</li>
+						</ul>
+						I will get you through this course!</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="" id="instructor">
+			<div class="jumbotron">
+				<img class="img-circle pull-right" src="geom.jpg" width="255px">
+				<h1>Geo Miller</h1>
+				<p>is the founder of <a href="http://codeslam.io">codeslam</a> - exploring the <a href="https://medium.com/@storesyntax/we-don-t-know-what-it-means-to-learn-to-code-da5dad1c3742#.7ov5hgw7e">art of code</a>.  He is currently serving as a technical advisor to <a href="https://www.lobbyq.com/">LobbyQ</a> and an open source contributor to <a href="http://blockbuilder.org/">Building Blocks</a>, <a href="http://tributary.io">Tributary</a>, and Inlet.</p>
+				<p>Formerly, Geo was the Assistant Director of the Program in Interdisciplinary Computing at Florida State University in Tallahassee, Florida.  He completed a Masters' in Scientific Computing and Bachelor of Science in Computer Science both at Florida State University.
+				<p>For his Master's thesis, studied uncertainty quantification of reactive transport ground water models using FSU’s High Performance Cluster and Oak Ridge National Laboratory's Blue Gene/P.  At the College of Medicine, Geo programmed sensors, machine learning algorithms for classification of audio samples, and data analysis systems for locomotor and song activity of the Zebra Finch.</p>
+				<p>Previous programming projects include Android overclocking utilities, as well as mobile games with JPApps in Atlanta, GA.  As an undergraduate in Computer Science working at the FSU College of Medicine, His current interests include live code editing and programming education in addition to contributing to tributary.io and other open source projects.
+			</div>
+		</div>
+
+		<div class="section" id="signup">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>We are currently determining our weekly meeting time.  Sign up if you are interested in taking this course, and I will attempt to find a time that will work for the most people!</h3>
+					<iframe src="https://docs.google.com/forms/d/1hpilpWokH6waDCIO5QclVD7EkenP25yRR4X50_mup2o/viewform?embedded=true" width="760" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+				</div>
+			</div>
+		</div>
+
+	<script type='text/javascript'>
+		console.log("Hello world.")
+		var code = document.getElementById('code')
+		var editor = CodeMirror.fromTextArea(code, {
+			mode: "text/javascript",
+			theme: "mdn-like",
+	    lineNumbers: true
+	  })
+		var output = document.getElementById('output')
+		var out = CodeMirror.fromTextArea(output, {
+			mode:"text",
+			theme:"default",
+			lineNumbers:false,
+			readOnly:true
+		})
+
+		$(".runit").click(function() {
+			out.setValue("")
+			eval(editor.getValue())
+			$(this).animate({"background-color": "#428bca", "color":"white"}, function() {
+				$(this).animate({"background-color": "transparent", "color":"#256ead"})
+			})
+
+		})
+
+		console.log = function() {
+			var args = Array.prototype.slice.call(arguments);
+			args.forEach(function(a) {
+				var pos = CodeMirror.Pos(out.getDoc().lastLine(), out.getDoc().getLine(out.getDoc().lastLine()).length)
+				out.replaceRange(a, pos)
+			})
+			var pos = CodeMirror.Pos(out.getDoc().lastLine(), out.getDoc().getLine(out.getDoc().lastLine()).length)
+			out.replaceRange("\n", pos)
+		}
+
+		$(document).ready(function(){
+		  // Closes the Responsive Menu on Menu Item Click
+		  $('.navbar-collapse ul li a').click(function() {
+		      $('.navbar-toggle:visible').click();
+		  });
+
+		  $('.navbar-brand').click(function() {
+		    //hack
+		    var navbar = $($('.navbar-collapse')[0]);
+		    if (navbar.attr('aria-expanded') == "true") {
+		      $('.navbar-toggle:visible').click();
+		    }
+		  })
+		})
+
+	</script>
 	</body>
 </html>

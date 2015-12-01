@@ -239,7 +239,7 @@ Object.keys(event).forEach(function(k){
 
 		$(".runit").click(function() {
 			out.setValue("")
-			eval(editor.getValue())
+			eval(editor.getValue()) // The only person you can harm is yourself
 			$(this).animate({"background-color": "#428bca", "color":"white"}, function() {
 				$(this).animate({"background-color": "transparent", "color":"#256ead"})
 			})

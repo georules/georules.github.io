@@ -19,6 +19,7 @@
 
 		<style>
 		.bin {
+			margin-top: -100px;
 		  font-size:1.25em;
 		  width: 100%;
 			height: 150px;
@@ -26,11 +27,10 @@
 			background: inherit;
 			color: rgba(255,255,255,0.8);
 			margin: 0 auto;
-			font-family: monospace;
+			font-family: 'Source Code Pro', monospace;
 			word-wrap: break-word;
 		 	line-height: 0.8em;
 			overflow: hidden;
-			float:right;
 		}
 
 		html, body {
@@ -51,7 +51,7 @@
 
 
 			.codefont {
-				font-family: 'Source Code Pro';
+				font-family: 'Source Code Pro', monospace;
 			}
 			body {
 
@@ -69,6 +69,9 @@
 				background-color: #6ad;
 				padding-left: 30px;
 				padding-right:30px;
+				width:75%;
+				margin-left:auto;
+				margin-right:auto;
 			}
 			.runit {
 				font-weight: 800;
@@ -123,9 +126,9 @@
 		<div class="fullscreen content-a" >
 
 			<div class="header jumbotron content-b">
-				<p class="bin"><p>
 				<span class="codefont">
-				<h1>codeslam's</h1>
+				<p class="bin"><p>
+				<h1 class="title">codeslam's</h1>
 				<h2>Computer Science Crash Course</h2>
 				</span>
 				<h2><em>an introduction to Computer Science in 2 months</em></h2>
@@ -303,12 +306,12 @@ Object.keys(event).forEach(function(k){
 
 		$(document).ready(function(){
 		  generateBinary();
-			setInterval('updateBinary()', 0);
+			setInterval('generateBinary()', 500);
 		});
 
 		function generateBinary(){
 		  str = "";
-		  for ( var i = 0; i < 3500; i++ ) {
+		  for ( var i = 0; i < 1000; i++ ) {
 		    str = str + Math.round(Math.random());
 		  }
 		  $(".bin").html(str);

@@ -260,6 +260,9 @@ $(document).ready(function() {
     $(".intro-text-no").addClass("intro-text-doit")
     $(".stuff").fadeIn()
   },1500)
+  setTimeout(function() {
+    $("#controls").slideFadeToggle()
+  },1000)
 })
 
 
@@ -438,7 +441,7 @@ hide = true
             return this.animate({opacity: 'toggle', height: 'toggle'}, speed, easing, callback);
     };
 
-        $("#controls").hide()
+        //$("#controls").hide()
         $(".content").hide()
 
 

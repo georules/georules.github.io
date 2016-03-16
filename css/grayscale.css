@@ -8,7 +8,7 @@
 }
 .popover-content{
   color:#000;
-  font-family: "Colaborate-Thin","Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Monoid","Helvetica Neue", Helvetica, sans-serif;
 }
 .intro-svg{
   min-height: 225px;
@@ -107,7 +107,7 @@
           }
 
 .logo {
-  font-family: "Colaborate-Thin","Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Monoid","Helvetica Neue", Helvetica, sans-serif;
   text-transform: lowercase;
 }
 
@@ -116,7 +116,7 @@
 body {
     width: 100%;
     height: 100%;
-    font-family: "Colaborate-Thin","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Monoid","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
   background-color: #6ad;
 }
@@ -133,14 +133,14 @@ h4,
 h5,
 h6 {
     margin: 0 0 35px;
-    font-family: "Colaborate-Thin","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Monoid","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
 p {
     margin: 0 0 25px;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 1.5;
 }
 
@@ -174,7 +174,7 @@ a:focus {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: lowercase;
-    font-family: "Colaborate","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Monoid","Helvetica Neue",Helvetica,Arial,sans-serif;
 
 
 }
@@ -208,7 +208,7 @@ nav a {
 .navbar-custom a {
     color: #F2FF00;
 }
-
+c
 .navbar-custom .nav li a {
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;

@@ -18,6 +18,7 @@ http://bl.ocks.org/mbostock/3081153
 
     <title>codeslam</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/monoid.css" rel="stylesheet">
     <link href="css/grayscale.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -64,90 +65,34 @@ http://bl.ocks.org/mbostock/3081153
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top">
 
-  <!--<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a id="main" class="navbar-brand page-scroll" href="#">
-                    codeslam
-                </a>
-
-
-            </div>
-
-
-
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="hidden active">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#" id="log">.log()</a>
-                    </li>
-
-
-                </ul>
-            </div>
-
-
-
-        </div>
-
-    </nav> -->
-    <div class="ribbon">
-      <a href="/crash">2016 CS Crash Course</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <svg class="intro-svg"></svg>
+      <svg class="small"></svg>
+      <div id="controls"></div>
+      <h1 class="brand-heading">codeslam</h1>
+      <p>geo@codeslam.io</p>
     </div>
 
-<div class="main">
-<svg class="intro-svg"></svg>
-    <section class="intro">
+    <div class="col-md-6">
+      <br>
+      <p>Thank you, 2016 Computer Science Crash Course!</p>
+      <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thank you Crash Course students. I now pronounce you CODESLAM Computer Science Neophytes. Go forth and automate. <a href="https://t.co/3UEir4Xw6w">pic.twitter.com/3UEir4Xw6w</a></p>&mdash; codeslam (@codeslamio) <a href="https://twitter.com/codeslamio/status/702338751209578496">February 24, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+      <p>More codeslams to be announced later this summer.</p>
 
-        <div class="intro-body">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <svg class="small"></svg>
-                </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-12">
-                      <div id="controls">
-                      </div>
-                  </div>
-              </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="brand-heading">codeslam</h1>
-                        <!--<p class="intro-text"><span data-container="body" data-toggle="popover" data-placement="bottom"
-                          data-content="stop taking coding so seriously. have fun.">interactive code experiences</span></p>-->
-                          <div class="intro-text-no"></div>
+    </div>
+  </div>
+</div>
 
-                    </div>
-                </div>
-
-                <div class="row stuff" style="">
-                  <div class="col-md-12">
-                    <p>
-                      Programming is a creative endeavor.  Logic is your tool.
-                      <br>
-                      Programming is art.  Output is not the only canvas of expression.
-                      <br>
-                      Programming is fun.  Start playing.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="row stuff" style="display:none;">
+              <!--  <div class="row stuff" style="display:none;">
                   <div class="col-md-12">
                       <p>If you are interested in making code fun, email me <a href="mailto:geo@codeslam.io">geo@codeslam.io</a></p>
                     <p>Sign up with your email to find out when codeslams are here.</p>
-                    <!-- Begin MailChimp Signup Form -->
+
 <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 #mc_embed_signup input.button {
@@ -222,24 +167,9 @@ footer {
 
   <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
 </form>
-</div>
+</div>-->
 
 <!--End mc_embed_signup-->
-
-                  </div>
-
-            </div>
-        </div>
-
-        <footer>
-
-        </footer>
-
-    </section>
-  </div>
-  <div class="content">
-
-  </div>
 
 
 
@@ -321,14 +251,12 @@ $("[data-toggle=popover]").popover();
        $('.close-button').hide()
 
 
-var size = window.innerHeight/2;
+var size = window.innerHeight/3;
 var svg = d3.select(".intro-svg")
-    .attr("width", window.innerWidth)
+    .attr("width", window.innerWidth/2)
     .attr("height", size/1.5)
     //.attr("top", 0)
     //.attr("left",0)
-
-
 
     var x = d3.scale.ordinal()
         .domain(d3.superformulaTypes)
@@ -343,7 +271,7 @@ var svg = d3.select(".intro-svg")
 svgtranslatey = size/3+25
     var path = svg.append("path")
         .attr("class", "big")
-.attr("transform", "translate("+window.innerWidth/2+","+svgtranslatey+")")
+.attr("transform", "translate("+size/2+","+svgtranslatey+")")
         .attr("d", big)
         .attr("stroke",'steelblue')
         .attr("fill","transparent")
